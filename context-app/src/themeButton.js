@@ -18,15 +18,15 @@ const Button = (props)  => {
   )
 }
 
-export const ThemedButton = () => {
-  const value = useContext(ThemeContext);
-  const contextUserValue = useContext(UserContext);
+export const ThemedButton = (props) => {
+  const themeValue = useContext(ThemeContext);
+  const userDataFromContext = useContext(UserContext);
 
-  console.log(contextUserValue.loggedIn);
+  console.log('Theme button',themeValue, userDataFromContext);
   return(
     <>
-    <h1>Welcome {contextUserValue.name}</h1>
-    <Button theme={value} />
+    <h1>Welcome  {userDataFromContext.name} {userDataFromContext.lastName} </h1>
+    <Button theme={themeValue} />
     </>
   )
 }

@@ -1,24 +1,11 @@
-import React, { useEffect, useMemo } from "react";
-// import { ThemedButton } from "./themeButton";
-const array = ['Banana', 'apple', 'pear'];
+import React  from "react";
+import { ThemedButton } from "./themeButton";
 
-export const Toolbar = (props) => {
-
-  const memoArray = useMemo(() => props.array);
-
-  useEffect(()=> {
-    console.log('toolbar', memoArray);
-
-  },[memoArray])
+export const Toolbar = () => {
 
   return(
     <div>
-      <div>
-        <ul>
-          {memoArray?.map((item, index) => <li key={index}>{item}</li>)}
-        </ul>
-      </div>
-
+      <ThemedButton/>
     </div>
   )
 }
